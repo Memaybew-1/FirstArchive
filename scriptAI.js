@@ -37,3 +37,11 @@ function learn(wrongNode) {
     
     alert("Cảm ơn! Tôi đã thông minh hơn rồi.");
 }
+// Tìm nút bấm trong HTML
+const btn = document.getElementById('btnStart'); 
+
+// Khi bấm vào, AI sẽ chào bạn
+btn.addEventListener('click', () => {
+    alert("Xin chào! Tớ là MiniminiAI, tớ đã sẵn sàng để học hỏi!");
+});
+
