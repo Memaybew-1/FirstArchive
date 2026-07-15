@@ -1,4 +1,81 @@
 <!DOCTYPE html>
-  <html>
-      
-  </html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <style>
+            body{
+                background-color: #000;
+            }
+            #btn-send{
+                position: fixed;
+                bottom: 130px;right: 10px;
+                height: 56px;width: 100px;
+                box-shadow: 0px 0px 10px #fff;
+                font-size: 20px;
+                border-radius: 3px;
+                border: 2px solid #fff;
+                background-color: #fff;
+                color: #777;
+            }
+            #input-text{
+                position: fixed;
+                bottom: 130px;left: 10px;
+                height: 50px;width: 230px;
+                font-size: 20px;
+                border-radius: 3px;
+                box-shadow: 0px 0px 10px #fff;
+                border: 2px solid #fff;
+            }
+            #messages{
+                position: fixed;
+                top: 10px;left: 10px;right: 10px;
+                height: 500px;
+                overflow-y: auto;
+                border: 2px solid #fff;
+                border-radius: 5px;
+                padding: 10px;
+                box-shadow: 0px 0px 10px #fff;
+            }
+            .message{
+                margin: 10px 0;
+                padding: 10px;
+                border-radius: 2px;
+                background-color: #fff;
+            }
+            .user{
+                background-color: #fff;
+                text-align: right;
+            }
+            .bot{
+                background-color: #0000;
+                color: #fff;
+                border: 1px solid #fff;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="messages"></div>
+        <input type="text" id="input-text" placeholder="input..">
+        <button id="btn-send" onclick="BtnSend()">Send</button>
+        <script>
+            function BtnSend(){
+                const inputValue = document.getElementById('input-text').value;
+                if(inputValue.trim() === "") return;
+                const messagesDiv = document.getElementById('messages');
+
+                const userMsg = document.createElement('div');
+                userMsg.className = 'message user';
+                userMsg.textContent = inputValue;
+                messagesDiv.appendChild(userMsg);
+                const botMsg = document.createElement('div');
+                botMsg.className = 'message bot';
+                botMsg.textContent = "Bot: Bạn nói " + inputValue;
+                messagesDiv.appendChild(botMsg);
+                
+                document.getElementById('input-text').value = '';
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+        </script>
+    </body>
+</html>
