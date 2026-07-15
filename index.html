@@ -1,14 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>MiniminiAI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Memory</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>MiniminiAI</h1>
-    <button id="btnStart">Bắt đầu chơi</button>
-    <div id="aiResponse" style="margin-top:20px; font-weight:bold; border:1px solid #ccc; padding:10px;"></div>
+    <div class="container">
+        <div class="chatbox">
+            <div class="chat-header">
+                <h1>🤖 Chatbot Memory</h1>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <p>Xin chào! Tôi là chatbot có khả năng nhớ. Hãy nói cho tôi biết về bạn! 😊</p>
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="Nhập tin nhắn..." 
+                    autocomplete="off"
+                >
+                <button id="sendBtn">Gửi</button>
+            </div>
+            
+            <div class="memory-info">
+                <button id="memoryBtn">📝 Xem Memory</button>
+                <button id="clearBtn">🗑️ Xóa Memory</button>
+            </div>
+        </div>
+    </div>
 
-    <script src="scriptAI.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
